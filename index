@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HL6MNTCBV6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HL6MNTCBV6');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do I Have ADHD? | Free Online ADHD Self-Test Based on DSM-5</title>
+  <meta name="description" content="Take this free ADHD self-check based on DSM-5 criteria. No personal info required. Get instant results to better understand ADHD symptoms.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .question {
+      margin-bottom: 1rem;
+    }
+
+    .results {
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Step 1 Enhancements -->
+  <header>
+    <h1>Do I Have ADHD?</h1>
+    <p style="font-size: 1.2rem; color: #444;">Take the Free ADHD Self-Check</p>
+    <p style="font-size: 1rem; color: #666;">
+      No signup required. Based on DSM-5-TR criteria. Get instant results.
+    </p>
+  </header>
+
+  <p><em>Answer yes or no if each item pertains to you. This is not a substitute for professional diagnosis or care from a mental health provider.</em></p>
+
+  <form id="adhdForm">
+    <div id="questions"></div>
+    <button type="button" onclick="calculateResults()">See Results</button>
+  </form>
+
+  <div id="results" class="results"></div>
+
+  <p style="text-align: center; margin-top: 2rem;">
+    Check out our borderline personality disorder screener at
+    <a href="https://www.doihavebpd.org" target="_blank">www.doihavebpd.org</a>
+  </p>
+
+  <script>
+    window.onload = function () {
+  const criteria = [
+  "Do you frequently miss small details or make mistakes because of inattention?",
+  "Do you often struggle to keep focus on tasks or activities?",
+  "Do you have trouble listening when people speak to you directly?",
+  "Do you often start tasks but have difficulty finishing them or following through?",
+  "Do you find it hard to plan or keep your tasks organized?",
+  "Do you tend to avoid or delay activities that require long periods of focus?",
+  "Do you often misplace items needed for work, school, or everyday tasks?",
+  "Are you easily distracted by things happening around you?",
+  "Do you often forget to do daily responsibilities or errands?",
+  "Do you frequently fidget, tap, or feel restless while seated?",
+  "Do you get up from your seat in situations where you're expected to stay seated?",
+  "Do you feel the urge to move around or get physically restless in inappropriate situations?",
+  "Do you have difficulty playing or relaxing quietly?",
+  "Do you often feel constantly on the go, as if you're driven by a motor?",
+  "Do you tend to talk more than others or have trouble staying quiet?",
+  "Do you blurt out answers before a question is completely asked?",
+  "Do you find it hard to wait your turn in lines or group settings?",
+  "Do you often interrupt conversations or cut in when others are talking?",
+  "Have these behaviors been noticeable in more than one setting (like home, school, work, or social situations)?",
+  "Have these challenges made it harder for you to succeed socially, academically, or professionally?",
+  "Did you notice these types of behaviors starting before age 12?"
+];
+
+
+      const questionsDiv = document.getElementById("questions");
+
+      criteria.forEach((text, index) => {
+        const div = document.createElement("div");
+        div.classList.add("question");
+        div.innerHTML = `
+          <label>${index + 1}. ${text}</label><br />
+          <label><input type="radio" name="q${index}" value="yes" required /> Yes</label>
+          <label><input type="radio" name="q${index}" value="no" /> No</label>
+        `;
+        questionsDiv.appendChild(div);
+      });
+    };
+
+    function calculateResults() {
+      const form = document.forms["adhdForm"];
+      let yesCount = 0;
+      const totalQuestions = 21;
+
+      for (let i = 0; i < totalQuestions; i++) {
+        const val = form[`q${i}`].value;
+        if (val === "yes") yesCount++;
+      }
+
+      const resultDiv = document.getElementById("results");
+      const threshold = 6;
+      const message = yesCount >= threshold
+        ? `You answered "Yes" to ${yesCount} of the ${totalQuestions} questions. You may meet the criteria for ADHD. Please consult a mental health professional for a full evaluation.`
+        : `You answered "Yes" to ${yesCount} of the ${totalQuestions} questions. You may not meet the full criteria for ADHD based on this screening.`;
+
+      resultDiv.textContent = message + ' Sometimes ADHD symptoms are better explained by other psychiatric disorders such as: mood disorders, trauma disorders, personality disorders or psychotic disorders. Please consult a mental health professional for formal diagnoses.';
+    }
+  </script>
+</body>
+
+</html>
