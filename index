@@ -50,7 +50,6 @@
 </head>
 
 <body>
-  <!-- Step 1 Enhancements -->
   <header>
     <h1>Do I Have ADHD?</h1>
     <p style="font-size: 1.2rem; color: #444;">Take the Free ADHD Self-Check</p>
@@ -73,32 +72,37 @@
     <a href="https://www.doihavebpd.org" target="_blank">www.doihavebpd.org</a>
   </p>
 
+  <footer style="text-align: center; margin-top: 3rem; font-size: 0.95rem; color: #555;">
+    <a href="about.html">About</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="mailto:info@doihaveadhd.org">Contact</a>
+  </footer>
+
   <script>
     window.onload = function () {
-  const criteria = [
-  "Do you frequently miss small details or make mistakes because of inattention?",
-  "Do you often struggle to keep focus on tasks or activities?",
-  "Do you have trouble listening when people speak to you directly?",
-  "Do you often start tasks but have difficulty finishing them or following through?",
-  "Do you find it hard to plan or keep your tasks organized?",
-  "Do you tend to avoid or delay activities that require long periods of focus?",
-  "Do you often misplace items needed for work, school, or everyday tasks?",
-  "Are you easily distracted by things happening around you?",
-  "Do you often forget to do daily responsibilities or errands?",
-  "Do you frequently fidget, tap, or feel restless while seated?",
-  "Do you get up from your seat in situations where you're expected to stay seated?",
-  "Do you feel the urge to move around or get physically restless in inappropriate situations?",
-  "Do you have difficulty playing or relaxing quietly?",
-  "Do you often feel constantly on the go, as if you're driven by a motor?",
-  "Do you tend to talk more than others or have trouble staying quiet?",
-  "Do you blurt out answers before a question is completely asked?",
-  "Do you find it hard to wait your turn in lines or group settings?",
-  "Do you often interrupt conversations or cut in when others are talking?",
-  "Have these behaviors been noticeable in more than one setting (like home, school, work, or social situations)?",
-  "Have these challenges made it harder for you to succeed socially, academically, or professionally?",
-  "Did you notice these types of behaviors starting before age 12?"
-];
-
+      const criteria = [
+        "Do you frequently miss small details or make mistakes because of inattention?",
+        "Do you often struggle to keep focus on tasks or activities?",
+        "Do you have trouble listening when people speak to you directly?",
+        "Do you often start tasks but have difficulty finishing them or following through?",
+        "Do you find it hard to plan or keep your tasks organized?",
+        "Do you tend to avoid or delay activities that require long periods of focus?",
+        "Do you often misplace items needed for work, school, or everyday tasks?",
+        "Are you easily distracted by things happening around you?",
+        "Do you often forget to do daily responsibilities or errands?",
+        "Do you frequently fidget, tap, or feel restless while seated?",
+        "Do you get up from your seat in situations where you're expected to stay seated?",
+        "Do you feel the urge to move around or get physically restless in inappropriate situations?",
+        "Do you have difficulty playing or relaxing quietly?",
+        "Do you often feel constantly on the go, as if you're driven by a motor?",
+        "Do you tend to talk more than others or have trouble staying quiet?",
+        "Do you blurt out answers before a question is completely asked?",
+        "Do you find it hard to wait your turn in lines or group settings?",
+        "Do you often interrupt conversations or cut in when others are talking?",
+        "Have these behaviors been noticeable in more than one setting (like home, school, work, or social situations)?",
+        "Have these challenges made it harder for you to succeed socially, academically, or professionally?",
+        "Did you notice these types of behaviors starting before age 12?"
+      ];
 
       const questionsDiv = document.getElementById("questions");
 
@@ -134,5 +138,4 @@
     }
   </script>
 </body>
-
 </html>
